@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click the Moving Ball Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f8ff;
+        }
+        #gameArea {
+            position: relative;
+            width: 80vw;
+            height: 60vh;
+            margin: 50px auto;
+            border: 2px solid #000;
+            background-color: #e6f7ff;
+        }
+        #ball {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        h1 {
+            color: #008cba;
+        }
+        h2 {
+            color: #ff4500;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Click the Moving Ball!</h1>
+    <h2>Score: <span id="score">0</span></h2>
+
+    <div id="gameArea">
+        <div id="ball"></div>
+    </div>
+
+    <script>
+        const ball = document.getElementById('ball');
+        const gameArea = document.getElementById('gameArea');
+        const scoreDisplay = document.getElementById('score');
+        let score = 0;
+
+        function moveBall() {
+            const maxX = gameArea.clientWidth - ball.offsetWidth;
+            const maxY = gameArea.clientHeight - ball.offsetHeight;
+            const randomX = Math.floor(Math.random() * maxX);
+            const randomY = Math.floor(Math.random() * maxY);
+
+            ball.style.left = `${randomX}px`;
+            ball.style.top = `${randomY}px`;
+        }
+
+        ball.addEventListener('click', () => {
+            score++;
+            scoreDisplay.textContent = score;
+            moveBall();
+        });
+
+        moveBall();  // Initial ball movement when the game starts
+    </script>
+
+</body>
+</html>
