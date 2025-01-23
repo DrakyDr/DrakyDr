@@ -2,7 +2,7 @@
 - 👀 I’m interested in Web development
 - 🌱 I’m currently learning Python
 - 💞️ I’m looking to collaborate on ...
-- 📫 How to dance like an idiot
+- 📫 How to dance like an idiot and smoke like a drunk
 
 <!---
 DrakyDr/DrakyDr is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
